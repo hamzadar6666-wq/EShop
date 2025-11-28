@@ -30,7 +30,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|unique:categories,name|max:50'
         ]);
-        $categories=Category::create([$request->all()]);
+        $categories=Category::create($request->all());
         return [
             'success' => true,
             'message' => 'Category Created',
